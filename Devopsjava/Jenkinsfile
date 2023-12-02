@@ -1,9 +1,10 @@
 pipeline {
   agent any
-  stages {
+  stages {   
     stage('git-stage') {
       steps {
         sh '''
+        echo "git"
           git -version
         '''
       }
