@@ -9,10 +9,10 @@ pipeline {
         '''
       }
     }
-    stage('git-stage') {
+    stage('maven-stage') {
       steps {
         sh '''
-          git --version
+          mvn --version
         '''
       }
     }
