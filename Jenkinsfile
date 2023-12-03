@@ -9,5 +9,12 @@ pipeline {
         '''
       }
     }
+    stage('git-stage') {
+      steps {
+        sh '''
+          git --version
+        '''
+      }
+    }
   }
 }
