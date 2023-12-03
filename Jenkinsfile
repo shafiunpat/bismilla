@@ -9,5 +9,12 @@ pipeline {
         '''
       }
     }
+    stage('maven-stage') {
+      steps {
+        sh '''
+          mvn --version  
+        '''
+      }
+    }
   }
 }
