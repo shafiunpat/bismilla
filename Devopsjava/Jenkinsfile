@@ -1,10 +1,9 @@
 pipeline {
-  agent 'any'
-  stages {   
+  agent any
+  stages {
     stage('git-stage') {
       steps {
         sh '''
-        echo "git"
           git -version
           git clone 'https://github.com/shafiunpat/bismilla.git'
         '''

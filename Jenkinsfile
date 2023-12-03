@@ -5,30 +5,7 @@ pipeline {
       steps {
         sh '''
           git -version
-        '''
-      }
-    }
-    stage('maven-stage') {
-      steps {
-        sh '''
-          mvn --version
-          mvn clean package
-        '''
-      }
-    
-    stage('maven-test') {
-      steps {
-        sh '''
-          mvn --version
-          mvn test
-        '''
-      }
-    }
-    stage('maven-test') {
-      steps {
-        sh '''
-          mvn --version
-          mvn test
+          git clone 'https://github.com/shafiunpat/bismilla.git'
         '''
       }
     }
