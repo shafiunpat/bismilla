@@ -4,18 +4,19 @@ pipeline {
     stage('git-stage') {
       steps {
         sh '''
-        rm -rf*
+        rm -rf *
           git --version
           git clone 'https://github.com/shafiunpat/bismilla.git'
         '''
       }
     }
+    stages {
     stage('maven-stage') {
       steps {
         sh '''
           mvn --version
         '''
       }
-    }
+    }  
   }
 }
