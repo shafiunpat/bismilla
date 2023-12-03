@@ -4,7 +4,7 @@ pipeline {
     stage('git-stage') {
       steps {
         sh '''
-          git -version
+          git --version
           git clone 'https://github.com/shafiunpat/bismilla.git'
         '''
       }
