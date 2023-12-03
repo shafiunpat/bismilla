@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''
           git -version
+          git clone 'https://github.com/shafiunpat/bismilla.git'
         '''
       }
     }
