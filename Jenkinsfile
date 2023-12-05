@@ -16,6 +16,7 @@ pipeline {
         sh '''
         pwd
         ls -lart
+        cd bismilla
          mvn --version
          mvn clean package
         '''
