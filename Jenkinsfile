@@ -18,6 +18,7 @@ pipeline {
         ls -lart
         cd bismilla
         ls -lart
+        cd Devopsjavas
          mvn --version
          mvn clean package
         '''
