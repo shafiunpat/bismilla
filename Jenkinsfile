@@ -14,15 +14,7 @@ pipeline {
     stage('maven-stage') {
       steps {
         sh '''
-        pwd
-        ls -lart
-        cd bismilla
-        ls -lart
-        cd Devopsjava
-        ls -lart
-        cd demo
-        ls -lart
-        cd src
+        cd bismilla/Devopsjava/demo
          mvn --version
          mvn clean package
         '''
