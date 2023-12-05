@@ -14,6 +14,8 @@ pipeline {
     stage('maven-stage') {
       steps {
         sh '''
+        pwd
+        ls -lart
          mvn --version
          mvn clean package
         '''
