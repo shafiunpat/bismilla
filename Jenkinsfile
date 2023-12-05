@@ -21,6 +21,8 @@ pipeline {
         cd Devopsjava
         ls -lart
         cd demo
+        ls -lart
+        cd src
          mvn --version
          mvn clean package
         '''
