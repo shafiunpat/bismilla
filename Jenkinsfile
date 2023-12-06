@@ -18,7 +18,7 @@ pipeline {
       steps {
         sh '''
         ls -lart;
-        cd /Devopsjava/demo
+        cd /Devopsjava
         ls -lart
         '''
       }
