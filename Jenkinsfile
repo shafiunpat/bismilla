@@ -18,8 +18,7 @@ pipeline {
         sh '''
         mvn --version
         ls -lart
-        cd /bismilla/Devopsjava/demo
-        mvn clean install
+          mvn -f /bismilla/Devopsjava/demo clean install   
         '''
       }
     }
