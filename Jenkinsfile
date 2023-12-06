@@ -17,6 +17,7 @@ pipeline {
             }
       steps {
         sh '''
+        chmod -R 777 *
         ls -lart;
         cd /Devopsjava
         ls -lart
