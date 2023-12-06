@@ -17,7 +17,7 @@ pipeline {
             }
       steps {
         sh '''
-        cd /bismilla/Devopsjava/demo
+        cd/bismilla/Devopsjava/demo
          mvn --version
          mvn clean package
         '''
