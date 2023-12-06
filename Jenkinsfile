@@ -1,7 +1,4 @@
 pipeline {
-  agent {
-                label "slave"
-            }
   stages {
     stage('git-stage') {
       steps {
@@ -14,6 +11,9 @@ pipeline {
       }
     }
     stage('maven-stage') {
+      agent {
+                label "slave"
+            }
       steps {
         sh '''
         mvn --version
