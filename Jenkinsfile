@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+                label "slave"
+            }
   stages {
     stage('git-stage') {
       steps {
@@ -12,15 +14,10 @@ pipeline {
       }
     }
     stage('maven-stage') {
-      agent {
-                label "slave"
-            }
       steps {
         sh '''
-        chmod -R 777 *
-        ls -lart;
-        cd /Devopsjava
-        ls -lart
+        mvn --version
+        mvn clean install
         '''
       }
     }
