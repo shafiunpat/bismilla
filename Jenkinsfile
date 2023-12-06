@@ -21,7 +21,7 @@ pipeline {
          cd bismilla
          cd Devopsjava
          cd demo
-         mvn clean package
+         mvn clean install
         '''
       }
     }
