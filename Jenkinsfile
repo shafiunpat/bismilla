@@ -17,6 +17,7 @@ pipeline {
       steps {
         sh '''
         mvn --version
+        ls -lart
         mvn clean install
         '''
       }
