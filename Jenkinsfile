@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stages  {
+  stages {
     stage('git-stage') {
       steps {
         sh '''
@@ -12,6 +12,9 @@ pipeline {
       }
     }
     stage('maven-stage') {
+      agent {
+                label "slave"
+            }
       steps {
         sh '''
         cd bismilla/Devopsjava/demo
