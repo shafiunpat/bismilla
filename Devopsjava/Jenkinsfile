@@ -20,7 +20,8 @@ pipeline {
         ls -lart
           cd bismilla
           cd Devopsjava
-          cd demo 
+          cd demo
+          mvn clean install 
         '''
       }
     }
