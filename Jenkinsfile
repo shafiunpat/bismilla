@@ -19,8 +19,7 @@ pipeline {
         sh '''
         ls -lart
         cd /Devopsjava/demo
-         mvn --version
-         mvn clean package
+        ls -lart
         '''
       }
     }
