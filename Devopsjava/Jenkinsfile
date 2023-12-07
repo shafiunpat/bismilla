@@ -31,7 +31,7 @@ pipeline {
                 label "slave"
             }
         sh '''
-        cd bismilla/Devopsjava/demo
+        cd bismilla/Devopsjava
         ls -lart
         docker --version
         ls -lart
