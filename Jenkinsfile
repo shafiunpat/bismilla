@@ -13,6 +13,9 @@ pipeline {
     }
     stage('maven-stage') {
       steps {
+        agent {
+                label "slave"
+            }
         sh '''
         mvn --version
         ls -lart
