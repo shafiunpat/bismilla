@@ -34,7 +34,7 @@ pipeline {
         cd bismilla/Devopsjava
         docker --version
         docker build -t "bissmilla" .
-        docker run -itd --name { print $1,$2 } -p 8080:8080 -p 50000:50000 bissmilla  
+        docker run -itd --name asma$12 -p 8080:8080 -p 50000:50000 bissmilla  
         '''
       }
     }
