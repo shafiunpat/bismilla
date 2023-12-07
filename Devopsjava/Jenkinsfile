@@ -32,9 +32,7 @@ pipeline {
             }
         sh '''
         cd bismilla/Devopsjava
-        ls -lart
         docker --version
-        ls -lart
         docker build -t "bissmilla" .
         '''
       }
