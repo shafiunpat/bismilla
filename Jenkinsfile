@@ -30,6 +30,8 @@ pipeline {
                 label "slave"
             }
         sh '''
+        cd bismilla/Devopsjava/demo
+        ls -lart
         docker --version
         docker build -t "bissmilla" .
         '''
