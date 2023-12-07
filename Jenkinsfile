@@ -24,5 +24,16 @@ pipeline {
         '''
       }
     }
+     stage('docker-stage') {
+      steps {
+        agent {
+                label "slave"
+            }
+        sh '''
+        docker --version
+        docker build -t "bissmilla" .
+        '''
+      }
+    }
   }
 }
