@@ -2,6 +2,10 @@ pipeline {
   agent {
                 label "slave"
             }
+            environment {
+        max = 50
+        random_num = "${Math.abs(new Random().nextInt(max+1))}"
+    }
   stages {
     stage('git-stage') {
       steps {
@@ -32,7 +36,7 @@ pipeline {
             }
         sh '''
         cd bismilla/Devopsjava
-        echo ${env.BUILD_ID}
+        echo ${env.random_num}
         docker --version
         docker build -t bissmilla:${env.BUILD_ID} .
         docker images 
