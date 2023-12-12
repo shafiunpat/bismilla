@@ -33,7 +33,8 @@ pipeline {
         sh '''
         cd bismilla/Devopsjava
         docker --version
-        docker build -t "bissmilla:${env.BUILD_ID}" . 
+        docker build -t "bissmilla:${env.BUILD_ID}" .
+        docker images 
         docker run -itd --name bissmilla:${env.BUILD_ID} -p 8080:8080 -p 50000:50000 bissmilla:${env.BUILD_ID}  
         '''
       }
