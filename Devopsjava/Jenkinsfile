@@ -32,6 +32,7 @@ pipeline {
             }
         sh '''
         cd bismilla/Devopsjava
+        echo ${env.BUILD_ID}
         docker --version
         docker build -t bissmilla:${env.BUILD_ID} .
         docker images 
