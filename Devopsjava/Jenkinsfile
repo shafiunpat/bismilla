@@ -36,7 +36,7 @@ pipeline {
             }
         sh '''
         cd bismilla/Devopsjava
-        echo ${env.random_num}
+        echo "${env.random_num}"
         docker --version
         docker build -t bissmilla:${env.BUILD_ID} .
         docker images 
