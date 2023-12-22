@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket         = "shafiun26022023"
     key            = "terraform.tfstate"
-    region         = "ap-south-1"
+    region         =  var.region
     dynamodb_table = "LockID"
   }
 }
