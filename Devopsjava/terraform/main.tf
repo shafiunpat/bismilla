@@ -84,7 +84,7 @@ Name = "SSH Security Group"
 
 #Create a new EC2 launch configuration
 resource "aws_instance" "my_instance" {
-ami                    = "ami-079db87dc4c10ac91"
+ami                    = "ami-0e742cca61fb65051"
 instance_type               = var.instance_type
 key_name                    = var.key_name
 security_groups             = [aws_security_group.my_security_group.id]
