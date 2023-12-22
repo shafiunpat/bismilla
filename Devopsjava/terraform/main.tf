@@ -9,7 +9,7 @@ terraform {
     bucket         = "shafiun26022023"
     key            = "terraform.tfstate"
     region         =  "us-east-1"
-    dynamodb_table = "LockID"
+    #dynamodb_table = "LockID"
   }
 }
 
