@@ -1,6 +1,6 @@
-  variable "vpc_id" {
-description = "enter vpc value"   
-}
+#   variable "vpc_id" {
+# description = "enter vpc value"   
+# }
 variable "subnet_id" {
 description = "enter subnet value" 
 }   
