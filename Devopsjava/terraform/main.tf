@@ -19,7 +19,8 @@ provider "aws" {
 }
 # Create VPC
 resource "aws_vpc" "my_vpc" {
-cidr_block = "10.0.0.0/16"
+#cidr_block = "10.0.0.0/16"
+cidr_block = var.vpc_value  
 enable_dns_hostnames    = true
 tags      = {
 Name    = "my_VPC"
@@ -36,7 +37,8 @@ Name  = "internet_gateway"
 # Create Public Subnet
 resource "aws_subnet" "my_public_subnet" {
 vpc_id                  = aws_vpc.my_vpc.id
-cidr_block              = "10.0.0.0/24"
+#cidr_block              = "10.0.0.0/24"
+cidr_block              = var.subnet_value
 availability_zone       = "us-east-1a"
 map_public_ip_on_launch = true
 tags      = {
