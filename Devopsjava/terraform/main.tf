@@ -41,7 +41,7 @@ availability_zone       = "us-east-1a"
 map_public_ip_on_launch = true
 tags      = {
 Name    = "public-subnet"
-subnet_id           =var.subnet_id
+#subnet_id           =var.subnet_id
 }
 }
 # Create Route Table
