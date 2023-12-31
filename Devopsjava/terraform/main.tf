@@ -21,7 +21,7 @@ resource "aws_s3_bucket_public_access_block" "shafiun26022023" {
 }
     key            = "terraform.tfstate"
     region         =  "us-east-1"
-   
+
     #dynamodb_table = "LockID"
   }
 }
@@ -33,7 +33,7 @@ provider "aws" {
 # Create VPC
 resource "aws_vpc" "my_vpc" {
 #cidr_block = "10.0.0.0/16"
-cidr_block = var.vpc_value  
+cidr_block              = var.vpc_value
 enable_dns_hostnames    = true
 tags      = {
 Name    = "my_VPC"
