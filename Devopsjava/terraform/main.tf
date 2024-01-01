@@ -7,18 +7,6 @@ terraform {
   }
   backend "s3" {
     bucket         = "shafiun26022023"
-     resource "aws_s3_bucket" "shafiun26022023" {
-  bucket = "shafiun26022023"
-}
-
-resource "aws_s3_bucket_public_access_block" "shafiun26022023" {
-  bucket = aws_s3_bucket.example.id
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-}
     key            = "terraform.tfstate"
     region         =  "us-east-1"
 
