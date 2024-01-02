@@ -97,4 +97,19 @@ create_before_destroy = true
 tags = {
 "Name" = "my_instance"
 }
+user_data = <<-EOF
+              #!/bin/bash
+              sudo yum update -y
+              sudo yum install -y java-1.8.0-openjdk-devel
+              sudo amazon-linux-extras install docker -y
+              sudo service docker start
+              sudo usermod -aG docker ec2-user
+              sudo chkconfig docker on
+              sudo yum install -y git
+              sudo curl -O https://pkg.jenkins.io/redhat-stable/jenkins.repo
+              sudo mv jenkins.repo /etc/yum.repos.d/
+              sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+              sudo yum install -y jenkins
+              sudo service jenkins start
+            EOF
 }
