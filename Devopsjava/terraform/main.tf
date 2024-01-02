@@ -27,7 +27,7 @@ lifecycle {
     create_before_destroy = true
   }
 tags      = {
-Name    = "my_VPC"
+Name    = "my_vpc"
 #vpc_id   =var.vpc_id
 }
 }
