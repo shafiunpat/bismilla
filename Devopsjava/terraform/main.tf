@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "shafiun212024"  # Replace with your S3 bucket name
+    bucket         = "shafiun26022023"  # Replace with your S3 bucket name
     key            = "terraform.tfstate"
     region         = "us-east-1"  # Replace with your desired AWS region
     encrypt        = true
