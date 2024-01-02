@@ -73,6 +73,7 @@ to_port          = 22
 protocol         = "tcp"
 cidr_blocks      = ["0.0.0.0/0"]
 }
+
 # ingress {
 # description      = "Custom TCP Access"
 # from_port        = 8080
