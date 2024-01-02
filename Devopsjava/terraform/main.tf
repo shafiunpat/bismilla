@@ -23,17 +23,13 @@ resource "aws_vpc" "my_vpc" {
 #cidr_block = "10.0.0.0/16"
 cidr_block              = var.vpc_value
 enable_dns_hostnames    = true
+lifecycle {
+    create_before_destroy = true
+  }
 tags      = {
 Name    = "my_VPC"
 #vpc_id   =var.vpc_id
 }
-}
-resource "aws_vpc" "my_vpc" {
-  # ... other VPC configuration ...
-
-  lifecycle {
-    create_before_destroy = true
-  }
 }
 # Create Internet Gateway
 resource "aws_internet_gateway" "my_internet_gateway" {
