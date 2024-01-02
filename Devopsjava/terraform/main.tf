@@ -97,5 +97,11 @@ create_before_destroy = true
 tags = {
 "Name" = "my_instance"
 }
-
+user_data = <<-EOF
+#!/bin/bash
+sudo yum update -y
+sudo yum install -y java-1.8.0-openjdk-devel
+sudo yum install -y git
+sudo amazon-linux-extras install docker -y
+EOF
 }
