@@ -28,6 +28,13 @@ Name    = "my_VPC"
 #vpc_id   =var.vpc_id
 }
 }
+resource "aws_vpc" "my_vpc" {
+  # ... other VPC configuration ...
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
 # Create Internet Gateway
 resource "aws_internet_gateway" "my_internet_gateway" {
 vpc_id    = aws_vpc.my_vpc.id
