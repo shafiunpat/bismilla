@@ -1,4 +1,4 @@
-  variable "vpc_value" {
+variable "vpc_value" {
 description = "enter vpc value"   
 }
 variable "subnet_value" {
