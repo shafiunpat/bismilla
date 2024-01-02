@@ -97,7 +97,7 @@ ami                    = "ami-079db87dc4c10ac91"
 instance_type               = var.instance_type
 key_name                    = var.key_name
 security_groups             = [aws_security_group.my_security_group.id]
-subnet_id                   = aws_subnet.my_public_subnet.id
+subnet_id                   = aws_subnet.my_subnet.id
 associate_public_ip_address = true
 lifecycle {
 create_before_destroy = true
