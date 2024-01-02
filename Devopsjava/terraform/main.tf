@@ -64,7 +64,7 @@ resource "aws_route_table_association" "my_subnet_association" {
 # Create Security Group 
 resource "aws_security_group" "my_security_group" {
 name        = "SSH Security Group"
-description = "allow access on Ports 8080 and 22"
+description = "allow access on Ports 22"
 vpc_id      = aws_vpc.my_vpc.id
 ingress {
 description      = "SSH Access"
@@ -73,13 +73,13 @@ to_port          = 22
 protocol         = "tcp"
 cidr_blocks      = ["0.0.0.0/0"]
 }
-ingress {
-description      = "Custom TCP Access"
-from_port        = 8080
-to_port          = 8080
-protocol         = "tcp"
-cidr_blocks      = ["0.0.0.0/0"]
-}
+# ingress {
+# description      = "Custom TCP Access"
+# from_port        = 8080
+# to_port          = 8080
+# protocol         = "tcp"
+# cidr_blocks      = ["0.0.0.0/0"]
+# }
 egress {
 from_port        = 0
 to_port          = 0
