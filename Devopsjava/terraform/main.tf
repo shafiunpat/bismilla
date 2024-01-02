@@ -16,18 +16,15 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-east-1" 
+  region = var.region
 }
 # Create VPC
 resource "aws_vpc" "my_vpc" {
-  lifecycle {
-    create_before_destroy = true
-  }
 #cidr_block = "10.0.0.0/16"
 cidr_block              = var.vpc_value
 enable_dns_hostnames    = true
 tags      = {
-Name    = "my_vpc"
+Name    = "my_VPC"
 #vpc_id   =var.vpc_id
 }
 }
