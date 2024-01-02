@@ -101,6 +101,10 @@ user_data = <<-EOF
 #!/bin/bash
 sudo yum update -y
 sudo yum install docker -y
-sudo yum install java-11-amazon-corretto-headless -y
+sudo service docker start
+sudo service docker status
+chmod 777 /var/run/docker.sock
+docker pull jenkins/jenkins
+docker run -it --name asma -p 8080:8080 -p 50000:50000 jenkins/jenkinsSS
 EOF
 }
