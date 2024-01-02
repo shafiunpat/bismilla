@@ -57,12 +57,19 @@ route_table_id      = aws_route_table.my_public_route_table.id
 # Create Security Group 
 resource "aws_security_group" "my_security_group" {
 name        = "SSH Security Group"
-description = "Enable SSH access on Port 22"
+description = "Enable SSH and Custom TCP access on Port 22 and 8080"
 vpc_id      = aws_vpc.my_vpc.id
 ingress {
 description      = "SSH Access"
 from_port        = 22
 to_port          = 22
+protocol         = "tcp"
+cidr_blocks      = ["0.0.0.0/0"]
+}
+ingress {
+description      = "Custom TCP Access"
+from_port        = 8080
+to_port          = 8080
 protocol         = "tcp"
 cidr_blocks      = ["0.0.0.0/0"]
 }
