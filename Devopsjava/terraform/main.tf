@@ -16,7 +16,7 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = var.region
+  region = "us-east-1" 
 }
 # Create VPC
 resource "aws_vpc" "my_vpc" {
@@ -70,7 +70,7 @@ route_table_id      = aws_route_table.my_public_route_table.id
 resource "aws_security_group" "my_security_group" {
 name        = "SSH Security Group"
 description = "allow access on Ports 8080 and 22"
-#vpc_id      = aws_vpc.my_vpc.id
+vpc_id      = aws_vpc.my_vpc.id
 ingress {
 description      = "SSH Access"
 from_port        = 22
