@@ -1,6 +1,6 @@
-variable "vpc_value" {
-description = "enter vpc value"   
-}
+# variable "vpc_value" {
+# description = "enter vpc value"   
+# }
 variable "subnet_value" {
 description = "enter subnet value" 
 }   

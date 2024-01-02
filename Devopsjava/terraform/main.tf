@@ -19,10 +19,13 @@ provider "aws" {
   region = var.region
 }
 resource "aws_vpc" "my_vpc" {
-  #cidr_block = "10.0.0.0/16"  # Replace with your desired CIDR block
-  cidr_block              = var.vpc_value
+  cidr_block = "10.10.0.0/16"  # Replace with your desired CIDR block
+  #cidr_block              = var.vpc_value
   enable_dns_support = true
   enable_dns_hostnames = true
+  lifecycle {
+    create_before_destroy = true
+  }
   tags      = {
 Name    = "my_vpc"
 #vpc_id   =var.vpc_id
