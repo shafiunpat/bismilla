@@ -100,7 +100,7 @@ tags = {
 user_data = <<-EOF
 #!/bin/bash
 sudo yum update -y
-yum install docker -y
-yum install git maven java -y
+sudo yum install docker -y
+sudo yum install java-11-amazon-corretto-headless -y
 EOF
 }
