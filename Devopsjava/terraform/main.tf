@@ -100,8 +100,7 @@ tags = {
 user_data = <<-EOF
 #!/bin/bash
 sudo yum update -y
-sudo yum install -y java-1.8.0-openjdk-devel
-sudo yum install -y git
-sudo amazon-linux-extras install docker -y
+yum install docker -y
+yum install git maven java -y
 EOF
 }
