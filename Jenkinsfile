@@ -34,11 +34,5 @@ pipeline{
           sh "terraform validate"
       }
     }
-    stage('Terraform Tnit') {
-      steps {
-        script {
-          sh "terraform validate"
-      }
-    }
   }
 }      
