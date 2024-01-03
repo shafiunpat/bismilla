@@ -21,6 +21,13 @@ agent {
           git --version
         '''
       }
-    }     
+    } 
+    stage('git-stage') {
+       steps {
+        sh '''
+        terraform init
+        '''
+      }
+    }         
   }
 }
