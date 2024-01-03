@@ -13,3 +13,9 @@
  variable "instance_type" {
  description = "enter instance type value" 
  }  
+ variable "access_key" {
+ description = "enter acess_key value" 
+ }  
+ variable "secret_key" {
+ description = "enter secret_key value" 
+ }  

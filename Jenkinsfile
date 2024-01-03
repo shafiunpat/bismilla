@@ -1,8 +1,19 @@
-pipeline {
-  agent 'any'
-  stages {
-    stage('git-stage') {
-      steps {
+pipeline{
+  agent {
+                label "slave"
+            }
+     parameters{
+        booleanParam(name: 'autoApprove',defaultvalue:false,description:'Automatically run apply after generating plan?')
+        choice(name:'action', choices:['apply''destroy'],description:'select action to perform')
+     }
+     environment{
+        AWS_ACESS__KEY_ID  =credencials('aws_acess_key_id')
+        AWS_SECRET_ACESS_KEY  =credentials('aws_secret_acess_key')
+        AWS_REGION ='us-east-1'
+     }
+     stages{
+      stage('git-stage') {
+       steps {
         sh '''
         rm -rf *
           git --version
@@ -11,31 +22,23 @@ pipeline {
         '''
       }
     }
-    stage('maven-stage') {
+    stage('Terraform Init') {
       steps {
-        agent {
-                label "slave"
-            }
-        sh '''
-        mvn --version
-        ls -lart
-         cd bismilla/Devopsjava/demo
-         mvn clean install
-        '''
+        script {
+          sh "terraform init"
       }
     }
-     stage('docker-stage') {
+    stage('Terraform Init') {
       steps {
-        agent {
-                label "slave"
-            }
-        sh '''
-        cd bismilla/Devopsjava/demo
-        ls -lart
-        docker --version
-        docker build -t "bissmilla" .
-        '''
+        script {
+          sh "terraform validate"
+      }
+    }
+    stage('Terraform Init') {
+      steps {
+        script {
+          sh "terraform validate"
       }
     }
   }
-}
+}      
