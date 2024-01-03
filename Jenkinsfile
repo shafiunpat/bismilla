@@ -4,7 +4,7 @@ pipeline{
             }
      parameters{
         booleanParam(name: 'autoApprove',defaultvalue:false,description:'Automatically run apply after generating plan?')
-        choice(name:'action', choices:['apply''destroy'],description:'select action to perform')
+        #choice(name:'action', choices:['apply''destroy'],description:'select action to perform')
      }
      environment{
         AWS_ACESS__KEY_ID  =credencials('aws_acess_key_id')
