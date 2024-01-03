@@ -2,8 +2,8 @@ pipeline{
   agent {
                 label "slave"
             }
-     parameters{
-        booleanParam(name: 'autoApprove',defaultvalue:false,description:'Automatically run apply after generating plan?')
+     #parameters{
+        #booleanParam(name: 'autoApprove',defaultvalue:false,description:'Automatically run apply after generating plan?')
         #choice(name:'action', choices:['apply''destroy'],description:'select action to perform')
      }
      environment{
