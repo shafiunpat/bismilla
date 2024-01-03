@@ -15,9 +15,9 @@ terraform {
 }
 provider "aws" {
   # Configuration options
-  access_key = var.access_key
-  secret_key = var.secret_key
-  region   = var.region  
+  access_key = "AKIASGWZWIRGVN7MWFF2"
+  secret_key = "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"
+  region   = "us-east-1"  
 }
 # Create VPC
 resource "aws_vpc" "my_vpc" {
@@ -88,8 +88,8 @@ Name = "SSH Security Group"
 #Create a new EC2 launch configuration
 resource "aws_instance" "my_instance" {
 ami                    = "ami-079db87dc4c10ac91"
-instance_type               = var.instance_type
-key_name                    = var.key_name
+instance_type               = "t2.micro"
+key_name                    = "alla"
 security_groups             = [aws_security_group.my_security_group.id]
 subnet_id                   = aws_subnet.my_public_subnet.id
 associate_public_ip_address = true

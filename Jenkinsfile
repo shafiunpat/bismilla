@@ -1,8 +1,8 @@
 pipeline{
-  agent {
+agent {
                 label "slave"
             }
-      /*parameters{
+            /*parameters{
         booleanParam(name: 'autoApprove',defaultvalue:false,description:'Automatically run apply after generating plan?')
         choice(name:'action', choices:['apply''destroy'],description:'select action to perform')
      }*/
@@ -21,18 +21,6 @@ pipeline{
           git --version
         '''
       }
-    }
-    stage('Terraform Init') {
-      steps {
-        script {
-          sh "terraform init"
-      }
-    }
-    stage('Terraform Init') {
-      steps {
-        script {
-          sh "terraform validate"
-      }
-    }
+    }     
   }
-}      
+}
