@@ -10,7 +10,6 @@ provider "aws" {
   # Configuration options
   region   = "us-east-1"  
 }
-
 resource "aws_kms_key" "example_kms_key" {
   description = "Example KMS Key"
 }
