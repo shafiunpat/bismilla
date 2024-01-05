@@ -28,7 +28,7 @@ resource "aws_db_instance" "example_rds" {
   port                 = 3306
   publicly_accessible = false
 
-  kms_key_id = "aws_kms_key.example_kms_key.arn:aws:kms:us-east-1:151854138445:key/791a6944-573a-4695-a583-844a0f055c4d"  # Use the ARN of the KMS key
+  kms_key_id = "arn:aws:kms:us-east-1:151854138445:key/791a6944-573a-4695-a583-844a0f055c4d"
 
   tags = {
     Name = "example-rds-instance"
