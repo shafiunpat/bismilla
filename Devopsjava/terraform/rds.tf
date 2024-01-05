@@ -1,23 +1,23 @@
-resource "aws_kms_key" "example_kms_key" {
-  description = "Example KMS Key"
-}
-
-resource "aws_db_instance" "example_rds" {
-  identifier           = "example-rds-instance"
-  allocated_storage    = 20
-  storage_type         = "gp2"
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t2.micro"
-  username             = "admin_user"
-  password             = "your_password_here"
-  #name                 = "exampledb"
-  port                 = 3306
-  publicly_accessible = false
-
-  kms_key_id = "arn:aws:kms:us-east-1:151854138445:key/791a6944-573a-4695-a583-844a0f055c4d"
+resource "aws_db_subnet_group" "my_db_subnet_group" {
+  name = "my-db-subnet-group"
+  subnet_ids = [aws_subnet.subnet_a.id, aws_subnet.subnet_b.id]
 
   tags = {
-    Name = "example-rds-instance"
+    Name = "My DB Subnet Group"
   }
+}
+resource "aws_db_instance" "default" {
+  allocated_storage      = 10
+  storage_type           = "gp2"
+  engine                 = "mysql"
+  engine_version         = "5.7"
+  instance_class         = "db.t2.micro"
+  identifier             = "mydb"
+  username               = "dbuser"
+  password               = "dbpassword"
+
+  vpc_security_group_ids = [aws_security_group.rds_sg.id]
+  db_subnet_group_name = aws_db_subnet_group.my_db_subnet_group.name
+
+  skip_final_snapshot = true
 }
