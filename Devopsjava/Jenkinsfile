@@ -25,19 +25,19 @@ pipeline {
         '''
       }
     }
-    //  stage('docker-stage') {
-    //   steps {
-    //     agent {
-    //             label "slave"
-    //         }
-    //     sh '''
-    //     cd bismilla/Devopsjava 
-    //     docker --version
-    //     docker build -t bissmilla .
-    //     docker images 
-    //     docker run -itd --name anisa -p 8080:8080 -p 50000:50000 bissmilla
-    //     '''
-    //   }
-    // }
+     stage('docker-stage') {
+       steps {
+        agent {
+                label "slave"
+            }
+        sh '''
+         cd bismilla/Devopsjava 
+         docker --version
+         docker build -t bissmilla .
+         docker images 
+         docker run -itd --name anisa -p 8080:8080 -p 50000:50000 bissmilla
+         '''
+      }
+     }
   }
 }
