@@ -79,9 +79,6 @@ resource "aws_db_instance" "default" {
   engine_version = "5.7"
   instance_class = "db.t3.medium"
   identifier = "mydb"
-  username = "dbuser"
-  password = "dbpassword"
-
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
   db_subnet_group_name = aws_db_subnet_group.my_db_subnet_group.name
 
