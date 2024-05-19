@@ -13,7 +13,12 @@ pipeline {
       steps {
         sh '''
           git --version
+	  rm -rf *
+	  git status
 		  git clone url
+          git add
+	  git status
+          git commit
         '''
       }
     }
