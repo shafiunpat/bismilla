@@ -4,7 +4,7 @@
 
 
 ![image](https://github.com/shafiunpat/bismilla/assets/150790160/a5c85f51-a90b-4ed6-9746-97e8856974de)
-
+'''
 pipeline {
   agent  'any'
   stages   ('dev-stage') {
@@ -13,7 +13,6 @@ pipeline {
       steps {
         sh '''
           git --version
-	  rm -rf *
 	  git status
 		  git clone url
           git add
@@ -105,5 +104,5 @@ stage('k8-deploy-task') {
     }
   } 
 }
-
+'''
 
