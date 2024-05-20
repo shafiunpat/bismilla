@@ -55,7 +55,7 @@ stage('docker-image-build-task') {
       }
     }
 	
-	continious delivery(dev and test no approval) and continious deployement(prod with approval)
+	continious deployement(dev and test no approval) and continious delivery (prod with approval)
 pipeline { 
   agent  'any'
   stages   ('dev-stage/test-stage') {
