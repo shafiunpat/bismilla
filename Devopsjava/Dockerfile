@@ -9,5 +9,5 @@ ARG JAR_FILE=demo/target/shafiun.jar
 COPY ${JAR_FILE} shafiun1.jar
 FROM openjdk:11-jre AS run
 COPY --from=build ${JAR_FILE} shafiun1.jar.
-ENTRYPOINT ["java","-jar","/shafiun.jar"]
+ENTRYPOINT ["java","-jar","/shafiun1.jar"]
 EXPOSE 8080
