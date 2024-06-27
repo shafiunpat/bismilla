@@ -19,7 +19,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file to the container
-COPY shafiun1.jar /app/shafiun1.jar
+COPY ${JAR_FILE} /app/shafiun1.jar
 
 # Expose port 8080 (or whatever port your application uses)
 EXPOSE 8080
