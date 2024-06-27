@@ -1,8 +1,4 @@
-#a=["shafiun","anisa","asma"]
-#b=["clever","pretty","beautifull"]
-#for i in a:
- #for j in b:
-   # print(i,j)
+
 def addition(num1,b):
     add = a+b
     return(add)
