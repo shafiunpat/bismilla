@@ -11,7 +11,7 @@ CPU_THRESHOLD = 80  # in percentage
 MEMORY_THRESHOLD = 80  # in percentage
 
 # Initialize boto3 SNS client
-sns_client = boto3.client('sns', region_name=us-east-2)
+sns_client = boto3.client('sns', region_name='us-east-2')
 
 def send_sns_notification(cpu_usage, memory_usage):
     message = f"Warning!\nCPU usage is at {cpu_usage}%\nMemory usage is at {memory_usage}%"
