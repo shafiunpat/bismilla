@@ -17,7 +17,7 @@ def send_sns_notification(cpu_usage, memory_usage):
     message = f"Warning!\nCPU usage is at {cpu_usage}%\nMemory usage is at {memory_usage}%"
     try:
         response = sns_client.publish(
-            TopicArn=SNS_TOPIC_ARN,
+            TopicArn=arn:aws:sns:us-east-2:151854138445:sns.fifo,
             Message=message,
             Subject='High Resource Usage Alert'
         )
