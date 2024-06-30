@@ -25,7 +25,7 @@ def send_sns_notification(cpu_usage, memory_usage):
     except Exception as e:
         print(f"Failed to send SNS notification: {e}")
 
-def monitor():
+def monitor_system():
     while True:
         cpu_usage = psutil.cpu_percent(interval=1)
         memory_usage = psutil.virtual_memory().percent
@@ -36,4 +36,4 @@ def monitor():
         time.sleep(5)  # check every 5 seconds
 
 if __name__ == "__main__":
-    monitor()
+    monitor_system()
