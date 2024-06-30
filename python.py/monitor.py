@@ -17,7 +17,7 @@ def send_sns_notification(cpu_usage, memory_usage):
     message = f"Warning!\nCPU usage is at {cpu_usage}%\nMemory usage is at {memory_usage}%"
     try:
         response = sns_client.publish(
-            TopicArn=arn:aws:sns:us-east-2:151854138445:sns.fifo,
+            TopicArn=SNS_TOPIC_ARN,
             Message=message,
             Subject='High Resource Usage Alert'
         )
@@ -25,7 +25,7 @@ def send_sns_notification(cpu_usage, memory_usage):
     except Exception as e:
         print(f"Failed to send SNS notification: {e}")
 
-def monitor_system():
+def monitor():
     while True:
         cpu_usage = psutil.cpu_percent(interval=1)
         memory_usage = psutil.virtual_memory().percent
@@ -36,4 +36,4 @@ def monitor_system():
         time.sleep(5)  # check every 5 seconds
 
 if __name__ == "__main__":
-    monitor_system()
+    monitor()
