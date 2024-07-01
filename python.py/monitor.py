@@ -7,8 +7,8 @@ SNS_TOPIC_ARN = 'arn:aws:sns:us-east-2:151854138445:sns.fifo'
 AWS_REGION = 'us-east-2'  # Replace with your AWS region
 
 # Thresholds
-CPU_THRESHOLD = 80  # in percentage
-MEMORY_THRESHOLD = 80  # in percentage
+CPU_THRESHOLD = 10 # in percentage
+MEMORY_THRESHOLD = 10  # in percentage
 
 # Initialize boto3 SNS client
 sns_client = boto3.client('sns', region_name='us-east-2')
