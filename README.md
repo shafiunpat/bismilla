@@ -145,6 +145,7 @@ if __name__ == "__main__":
     monitor_system()
 ```
 
+```
 To run your Python script, you need to follow these steps:
 **1. Save the Script**
 Save your script in a file, for example, monitor.py.
@@ -164,7 +165,7 @@ pip3 install --user psutil boto3
 
 **4.Run the Script:**
 python3 monitor.py
-
+```
 
 
 
