@@ -3,7 +3,7 @@ import boto3
 import time
 
 # AWS SNS configuration
-SNS_TOPIC_ARN = 'arn:aws:sns:us-east-2:151854138445:sns.fifo' 
+SNS_TOPIC_ARN = 'arn:aws:sns:us-east-2:151854138445:monitor' 
 AWS_REGION = 'us-east-2'  # Replace with your AWS region
 
 # Thresholds
